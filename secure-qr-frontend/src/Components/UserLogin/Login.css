@@ -1,0 +1,93 @@
+/* Container for the login page */
+.login-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 70vh;
+    background-color: #f7fafc;
+    /* Light gray background */
+}
+
+/* Box for the login form */
+.login-box {
+    width: 100%;
+    max-width: 400px;
+    padding: 24px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Title of the login form */
+.login-title {
+    text-align: center;
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 24px;
+}
+
+/* Error message for server-side errors */
+.server-error {
+    color: #e53e3e;
+    font-size: 14px;
+    text-align: center;
+}
+
+/* Form container */
+.login-form {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+/* Input group for form elements */
+.input-group {
+    display: flex;
+    flex-direction: column;
+}
+
+/* Label styling */
+.label {
+    font-weight: 600;
+    margin-bottom: 8px;
+}
+
+/* Input field styling */
+.input {
+    padding: 19px 16px;
+    border: 1px solid #d1d5db;
+    border-radius: 6px;
+    outline: none;
+    transition: border-color 0.3s ease;
+}
+
+.input:focus {
+    border-color: #3b82f6;
+    /* Blue focus ring */
+}
+
+/* Error message below input fields */
+.error-message {
+    color: #e53e3e;
+    font-size: 14px;
+}
+
+/* Login button styling */
+.login-button {
+    background-color: #000;
+    color: #fff;
+    padding: 12px 16px;
+    border-radius: 6px;
+    transition: background-color 0.3s ease;
+    cursor: pointer;
+}
+
+.login-button:hover {
+    background-color: #4b5563;
+    /* Darker shade on hover */
+}
+
+.login-button:active {
+    background-color: #1f2937;
+    /* Even darker on click */
+}
