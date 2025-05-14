@@ -1,70 +1,64 @@
-# Getting Started with Create React App
+# 🔐 Safe Data Sharing using Encrypted QR Code Generator
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+A secure and user-friendly platform that enables safe transmission of sensitive information using AES-256 encryption and QR code technology. Built with FastAPI, React.js, MongoDB, and optionally deployable on AWS Lambda.
 
-## Available Scripts
+---
 
-In the project directory, you can run:
+## 🚀 Features
 
-### `npm start`
+- 🔒 AES-256 Encryption for strong data confidentiality
+- 📲 QR Code generation for encrypted data sharing
+- 👥 JWT-based user authentication system
+- 🌐 React-based frontend for usability and responsiveness
+- ☁️ Cloud-ready backend with Docker and AWS Lambda support
+- 🗃️ MongoDB for lightweight credential storage
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+---
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## 🧱 System Architecture
 
-### `npm test`
+User --> React.js (Frontend)
+--> Zustand (State)
+--> Zod (Validation)
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+React.js --> HTTPS --> FastAPI (Backend)
+--> PyJWT (Authentication)
+--> Cryptography (AES-256)
+--> qrcode (QR generation)
+--> MongoDB (Storage)
 
-### `npm run build`
+FastAPI --> Docker or --> Mangum --> AWS Lambda
+React.js --> Vercel / Netlify / S3
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+---
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## 🖥️ Tech Stack
 
-### `npm run eject`
+| Layer       | Technology                   |
+|-------------|------------------------------|
+| Frontend    | React.js, Zustand, Zod       |
+| Backend     | FastAPI, PyJWT, Cryptography |
+| QR Encoding | `qrcode` Python package      |
+| Database    | MongoDB                      |
+| Deployment  | Docker, AWS Lambda, Vercel   |
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+---
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## 🛠️ Setup Instructions
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+### 1. Clone the Repository
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+```bash
+git clone https://github.com/your-username/encrypted-qr-share.git
+cd encrypted-qr-share
 
-## Learn More
+cd backend
+python -m venv env
+source env/bin/activate  # On Windows: env\Scripts\activate
+pip install -r requirements.txt
+uvicorn app:app --reload
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+cd frontend
+npm install
+npm start
