@@ -53,14 +53,18 @@ React.js --> Vercel / Netlify / S3
 git clone https://github.com/your-username/encrypted-qr-share.git
 cd encrypted-qr-share
 
-## 2. Backend Setup (FastAPI)
+---
+
+### 2. Backend Setup (FastAPI)
 cd backend
 python -m venv env
 source env/bin/activate  # On Windows: env\Scripts\activate
 pip install -r requirements.txt
 uvicorn app:app --reload
 
-## 3. Frontend Setup (React)
+---
+
+### 3. Frontend Setup (React)
 cd frontend
 npm install
 npm start
