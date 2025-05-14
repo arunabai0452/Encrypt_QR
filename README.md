@@ -55,7 +55,7 @@ cd encrypted-qr-share
 
 ---
 
-## 2. Backend Setup (FastAPI)
+**## 2. Backend Setup (FastAPI)**
 cd backend
 python -m venv env
 source env/bin/activate  # On Windows: env\Scripts\activate
@@ -64,7 +64,7 @@ uvicorn app:app --reload
 
 ---
 
-## 3. Frontend Setup (React)
+**## 3. Frontend Setup (React)**
 cd frontend
 npm install
 npm start
