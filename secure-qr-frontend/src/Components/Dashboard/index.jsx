@@ -56,7 +56,7 @@ const Dashboard = () => {
   return (
     <>
       <h1 style={{ alignContent: "center" }}>Welcome, {user}!</h1>
-      {decrypted_text !== null ? (
+      {decrypted_text ? (
         <PrintingAnimation decryptedData={decrypted_text} />
       ) : (
         <div style={styles.container}>

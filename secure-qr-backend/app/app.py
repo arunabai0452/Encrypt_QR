@@ -1,7 +1,6 @@
 from fastapi import FastAPI, HTTPException, Depends, Header
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.responses import StreamingResponse
-from pydantic import BaseModel
 from pymongo import MongoClient
 import qrcode
 from io import BytesIO
@@ -139,6 +138,10 @@ async def get_current_user(authorization: str = Header(...)):
     payload = verify_token(token)
     return {"user": {"email": payload["sub"]}}
 
+@app.get("/")
+async def read_root():
+    return {"message": "Hello World"}
+
 # -----------------------------
 # QR Code Generator
 # -----------------------------
@@ -168,7 +171,7 @@ async def generate_qr(qr_request: QRRequest):
     return StreamingResponse(buffer, media_type="image/png")
 
 # -----------------------------
-# Run Server
+# Run Server (for local testing)
 # -----------------------------
 
 if __name__ == "__main__":

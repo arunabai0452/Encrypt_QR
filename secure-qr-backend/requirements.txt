@@ -1,0 +1,8 @@
+fastapi
+uvicorn
+mangum
+pymongo
+python-dotenv
+qrcode
+PyJWT
+cryptography
