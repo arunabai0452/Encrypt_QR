@@ -1,0 +1,18 @@
+# Use the official AWS Lambda Python runtime base image
+FROM public.ecr.aws/lambda/python:3.10
+
+# Set the working directory
+WORKDIR ${LAMBDA_TASK_ROOT}
+
+# Copy the app code and requirements into the container
+COPY app ${LAMBDA_TASK_ROOT}
+
+# Install the function's dependencies
+COPY requirements.txt .
+RUN pip3 install -r requirements.txt --target "${LAMBDA_TASK_ROOT}" --upgrade --no-cache-dir
+
+# Ensure you have Mangum to handle FastAPI in Lambda
+RUN pip3 install mangum --target "${LAMBDA_TASK_ROOT}"
+
+# Set the Lambda entry point (handler function)
+CMD ["lambda_handler.handler"]  # Points to handler function in lambda_handler.py
